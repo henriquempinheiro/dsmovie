@@ -19,12 +19,11 @@ public class MovieController {
 	private MovieService service;
 	
 	@GetMapping
-	public Page<MovieDTO> finAll(Pageable pageable) {
+	public Page<MovieDTO> findAll(Pageable pageable) {
 		return service.findAll(pageable);
 	}
-	
 	@GetMapping(value = "/{id}")
-	public MovieDTO finById(@PathVariable Long id) {
+	public MovieDTO findById(@PathVariable Long id) {
 		return service.findById(id);
 	}
 }
